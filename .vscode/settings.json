@@ -1,0 +1,11 @@
+{
+  "git.autofetch": true,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "prettier.singleQuote": true
+}
