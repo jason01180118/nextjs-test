@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import WebSocket from 'ws';
 import { sha256 } from 'js-sha256';
 import Link from 'next/link';
+import Button from '@mui/material/Button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +23,9 @@ export default function Home() {
         </Link>
         <Link className="text-white" href="/csr">
           CSR
+        </Link>
+        <Link href="/article">
+          <Button variant="contained">Article</Button>
         </Link>
       </div>
     </main>
