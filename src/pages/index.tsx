@@ -24,8 +24,11 @@ export default function Home() {
         <Link className="text-white" href="/csr">
           CSR
         </Link>
-        <Link href="/article">
+        <Link href="/ssgpaths">
           <Button variant="contained">Article</Button>
+        </Link>
+        <Link href="/isr">
+          <Button variant="contained">Blog</Button>
         </Link>
       </div>
     </main>

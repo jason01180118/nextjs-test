@@ -1,18 +1,12 @@
-import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import axios from 'axios';
-import { useEffect } from 'react';
-import WebSocket from 'ws';
-import { sha256 } from 'js-sha256';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export async function getStaticPaths() {
-  let articles: { path: string }[] = [];
-  await axios.get('http://localhost:3000/api/article').then((res) => {
-    articles = res.data;
-  });
+  const articles: { path: string }[] = [{ path: '1' }, { path: '2' }];
 
   const paths = articles.map((article) => ({
     params: {
@@ -26,11 +20,12 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async (context) => {
+  console.log(context.params);
   return {
     props: {},
   };
-}
+};
 
 export default function Content() {
   return (
@@ -38,7 +33,7 @@ export default function Content() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <Link className="text-white" href="/article">
+        <Link className="text-white" href="/ssgpaths">
           back
         </Link>
       </div>
