@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   let testName;
   let error = false;
   await axios
-    .get(`http://127.0.0.1:3000/api/getdata/${params!.id}`)
+    .get(`${process.env.NEXT_PUBLIC_URL}/api/getdata/${params!.id}`)
     .then((res) => {
       testName = res.data.name;
     })
