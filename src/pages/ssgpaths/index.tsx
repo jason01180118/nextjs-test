@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export async function getServerSideProps() {
   let articles;
-  await axios.get('http://localhost:3000/api/article').then((res) => {
+  await axios.get('http://127.0.0.1:3000/api/article').then((res) => {
     articles = res.data;
     console.log(res.data);
   });
