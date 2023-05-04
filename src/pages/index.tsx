@@ -6,6 +6,7 @@ import WebSocket from 'ws';
 import { sha256 } from 'js-sha256';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
+import { signIn, signOut, useSession } from "next-auth/react"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,6 +31,15 @@ export default function Home() {
         <Link href="/isr">
           <Button variant="contained">Blog</Button>
         </Link>
+        <a
+                href={`/api/auth/signin`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signIn()
+                }}
+              >
+                Sign in
+              </a>
       </div>
     </main>
   );
