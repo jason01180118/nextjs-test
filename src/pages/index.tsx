@@ -40,6 +40,15 @@ export default function Home() {
               >
                 Sign in
               </a>
+              <a
+                href={`/api/auth/signout`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signOut()
+                }}
+              >
+                Sign out
+              </a>
               <iframe src="/api/examples/session" />
       </div>
     </main>
