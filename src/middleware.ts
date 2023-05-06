@@ -12,6 +12,7 @@ export default withAuth({
       return !!token;
     },
   },
+  secret: process.env.NEXTAUTH_SECRET,
 });
 
 export const config = { matcher: ['/ssgpaths'] };
