@@ -40,6 +40,7 @@ export default function Home() {
               >
                 Sign in
               </a>
+              <iframe src="/api/examples/session" />
       </div>
     </main>
   );
