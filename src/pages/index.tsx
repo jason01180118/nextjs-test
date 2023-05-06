@@ -6,7 +6,7 @@ import WebSocket from 'ws';
 import { sha256 } from 'js-sha256';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
-import { signIn, signOut, useSession } from "next-auth/react"
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +15,25 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
+      <Link
+        href={`/api/auth/signin`}
+        onClick={(e) => {
+          e.preventDefault();
+          signIn();
+        }}
+      >
+        Sign in
+      </Link>
+      <Link
+        href={`/api/auth/signout`}
+        onClick={(e) => {
+          e.preventDefault();
+          signOut();
+        }}
+      >
+        Sign out
+      </Link>
+      <iframe src="/api/examples/session" />
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <Link className="text-white" href="/ssr">
           SSR
@@ -31,25 +50,6 @@ export default function Home() {
         <Link href="/isr">
           <Button variant="contained">Blog</Button>
         </Link>
-        <a
-                href={`/api/auth/signin`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signIn()
-                }}
-              >
-                Sign in
-              </a>
-              <a
-                href={`/api/auth/signout`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signOut()
-                }}
-              >
-                Sign out
-              </a>
-              <iframe src="/api/examples/session" />
       </div>
     </main>
   );
