@@ -9,10 +9,9 @@ export default withAuth({
         return true;
       }
       // `/me` only requires the user to be logged in
-      console.log(token);
       return !!token;
     },
   },
 });
 
-export const config = { matcher: ['/isr'] };
+export const config = { matcher: ['/ssgpaths'] };
